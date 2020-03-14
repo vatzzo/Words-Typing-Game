@@ -1,0 +1,306 @@
+@media only screen and (max-width: 800px) {
+  body {
+    display: none;
+  }
+}
+
+@media only screen and (max-height: 700px) {
+  body {
+    display: none;
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #d7d7d7;
+  font-family: 'Quicksand', sans-serif;
+}
+
+body nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  background-color: #4a4181;
+  height: 8vh;
+  width: 100%;
+  z-index: 0;
+}
+
+body nav .pointer {
+  position: absolute;
+  top: 0.5vh;
+  left: 40%;
+  width: 20%;
+  height: 7vh;
+  border: solid 1vh #afffca;
+  border-radius: 3vh;
+  background-color: rgba(50, 221, 150, 0.2);
+}
+
+body nav .word-list {
+  height: 100%;
+  width: 80%;
+  color: white;
+  list-style: none;
+  font-size: 130%;
+  padding: 2.5vh 0;
+  background-color: #403872;
+  border-radius: 30px;
+  border-bottom: solid 3px #d7d7d7;
+  border-top: solid 3px #d7d7d7;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+body nav .word-list .liEl {
+  -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  text-align: center;
+  background-color: #4a4181;
+}
+
+body #section-one {
+  position: absolute;
+  top: 8vh;
+  left: 15vw;
+  width: 70vw;
+  height: 92vh;
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body #section-one .circle {
+  height: 45vh;
+  width: 45vh;
+  -webkit-box-shadow: 0 0 60px #aaaaaa;
+          box-shadow: 0 0 60px #aaaaaa;
+  background-color: white;
+  border-radius: 50%;
+  border: solid 0.3vh rgba(0, 0, 0, 0.1);
+  -webkit-animation-name: fill;
+          animation-name: fill;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  position: relative;
+}
+
+body #section-one .circle .number {
+  --rotation: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 2rem;
+  -webkit-transform: rotate(var(--rotation));
+          transform: rotate(var(--rotation));
+  padding: 1rem;
+}
+
+body #section-one .circle .number1 {
+  --rotation: 0deg;
+}
+
+body #section-one .circle .number2 {
+  --rotation: 60deg;
+}
+
+body #section-one .circle .number3 {
+  --rotation: 120deg;
+}
+
+body #section-one .circle .number4 {
+  --rotation: 180deg;
+}
+
+body #section-one .circle .number5 {
+  --rotation: 240deg;
+}
+
+body #section-one .circle .number6 {
+  --rotation: 300deg;
+}
+
+body #section-one .circle .hand {
+  --rotation: 0;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  width: 2vh;
+  height: 21vh;
+  background-color: #aaaaaa;
+  border-top-left-radius: 1vh;
+  border-top-right-radius: 1vh;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+  -webkit-transform: translateX(-50%) rotate(calc(var(--rotation)*1deg));
+          transform: translateX(-50%) rotate(calc(var(--rotation)*1deg));
+}
+
+body #section-one .circle::after {
+  content: '';
+  position: absolute;
+  background-color: #afffca;
+  border: 0.3vh solid #aaaaaa;
+  z-index: 7;
+  width: 2.5vh;
+  height: 2.5vh;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+@-webkit-keyframes fill {
+  from {
+    background-color: #aaaaaa;
+  }
+  to {
+    background-color: white;
+  }
+}
+
+@keyframes fill {
+  from {
+    background-color: #aaaaaa;
+  }
+  to {
+    background-color: white;
+  }
+}
+
+body #section-one .text-field {
+  margin-top: 7vh;
+  width: 60vh;
+  height: 6vh;
+  border-radius: 5vh;
+  -webkit-box-shadow: 0 0 20px #aaaaaa;
+          box-shadow: 0 0 20px #aaaaaa;
+  border: solid 3px white;
+  background-color: #4a4181;
+  color: white;
+  padding: 1.5vh;
+  font-size: 2vh;
+  opacity: 0.8;
+  text-align: center;
+  cursor: pointer;
+}
+
+body #section-one .text-field:hover {
+  opacity: 1;
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+}
+
+body #section-one .text-field::-webkit-input-placeholder {
+  color: white;
+}
+
+body #section-one .text-field:-ms-input-placeholder {
+  color: white;
+}
+
+body #section-one .text-field::-ms-input-placeholder {
+  color: white;
+}
+
+body #section-one .text-field::placeholder {
+  color: white;
+}
+
+body #section-two {
+  position: relative;
+  top: 0;
+  height: 92vh;
+  width: 100%;
+  color: #4a4181;
+  z-index: 1;
+}
+
+body #section-two p {
+  font-size: 210%;
+  text-align: center;
+}
+
+body #section-two h1 {
+  font-size: 170%;
+}
+
+body #section-two .level {
+  position: absolute;
+  top: 20vh;
+  left: 15vw;
+}
+
+body #section-two .score {
+  position: absolute;
+  top: 20vh;
+  right: 22vw;
+}
+
+body #section-two .record {
+  position: absolute;
+  top: 20vh;
+  right: 10vw;
+}
+
+body #section-two .record p {
+  font-weight: bold;
+  color: #986bdf;
+}
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,221 @@
+@import './variables.scss';
+
+@media only screen and (max-width: 800px) {
+    body {
+        display: none;
+    }
+  }
+
+  @media only screen and (max-height: 700px) {
+    body {
+        display: none;
+    }
+  }
+
+@mixin flexCenter($flexDirection) {
+    display: flex;
+    flex-direction: $flexDirection;
+    justify-content: center;
+    align-items: center;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+    background-color: $backColor;
+    font-family: 'Quicksand', sans-serif;
+
+    
+    nav {
+        @include flexCenter(row);
+        position: relative;
+        background-color: $navColor;
+        height: $navheight;
+        width: 100%;
+        z-index: 0;
+
+        .pointer {
+            position: absolute;
+            top: 0.5vh;
+            left: 40%;
+            width: 20%;
+            height: $navheight - 1vh;
+            border: solid 1vh $pointerColor;
+            border-radius: 3vh;
+            background-color: $pointerBackgroundColor;
+        }
+    
+        .word-list {
+            height: 100%;
+            width: 80%;
+            color: white;
+            list-style: none;
+            font-size: 130%;
+            padding: 2.5vh 0;
+            background-color: $navColorII;
+            border-radius: 30px;
+            border-bottom: solid 3px $backColor;
+            border-top: solid 3px $backColor;
+            overflow: hidden;
+            @include flexCenter(row);
+            justify-content: flex-start;
+            flex-wrap: nowrap;
+
+            .liEl{
+                flex-basis: 20%;
+                flex-grow: 0;
+                flex-shrink: 0;
+                text-align: center;
+                background-color:$navColor;
+            }
+        }
+    }
+
+    #section-one{
+        position: absolute;
+        top: $navheight;
+        left: 15vw;
+        width: 70vw;
+        height: 100vh-$navheight;
+        z-index: 2;
+
+        @include flexCenter(column);
+        .circle {
+            height: 45vh;
+            width: 45vh;
+            box-shadow: 0 0 60px $cicleColorSchadow;
+            background-color: white;
+            border-radius: 50%; 
+            border: solid 0.3vh rgba(0,0,0,0.1);
+            animation-name: fill;
+            animation-duration: 1s;
+            animation-iteration-count: 1;
+            position: relative;
+
+            .number {
+                --rotation: 0;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                font-size: 2rem;
+                transform: rotate(var(--rotation));
+                padding: 1rem;
+            }
+
+            .number1 {--rotation: 0deg}
+            .number2 {--rotation: 60deg}
+            .number3 {--rotation: 120deg}
+            .number4 {--rotation: 180deg}
+            .number5 {--rotation: 240deg}
+            .number6 {--rotation: 300deg}
+
+            .hand {
+                --rotation: 0;
+                position: absolute;
+                bottom: 50%;
+                left: 50%;
+                width: 2vh;
+                height: 21vh;
+                background-color: $cicleColorSchadow;
+                border-top-left-radius: 1vh;
+                border-top-right-radius: 1vh;
+                transform: translate(-50%, -50%);
+                transform-origin: bottom;
+                transform: translateX(-50%) rotate(calc(var(--rotation)*1deg));
+            }
+        }
+
+        .circle::after {
+            content: '';
+            position: absolute;
+            background-color: $pointerColor;
+            border: 0.3vh solid $cicleColorSchadow;
+            z-index: 7;
+            width: 2.5vh;
+            height: 2.5vh;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+        } 
+
+        @keyframes fill {
+            from {
+                background-color:$circleAnimationBackgroundColorI;
+            }
+            to {
+                background-color: white;
+            }
+        }
+        .text-field {
+            margin-top: 7vh;
+            width: 60vh;
+            height: 6vh;
+            border-radius: 5vh;
+            box-shadow: 0 0 20px $cicleColorSchadow;
+            border: solid 3px white;
+            background-color: $navColor;
+            color: white;
+            padding: 1.5vh;
+            font-size: 2vh;
+            opacity: 0.8;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .text-field:hover {
+            opacity: 1;
+            transform: scale(1.01);
+        }
+
+        .text-field::placeholder {
+            color: white;
+        }
+    }
+
+    #section-two{
+        position: relative;
+        top: 0;
+        height: 100vh-$navheight;
+        width: 100%;
+        color: $navColor;
+        z-index: 1;
+
+        p {
+            font-size: 210%;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 170%;
+        }
+
+        .level {
+            position: absolute;
+            top: $textsDistFromTop;
+            left: 15vw;
+        }
+
+        .score {
+            position: absolute;
+            top: $textsDistFromTop;
+            right: 22vw;
+        }
+
+        .record {
+            position: absolute;
+            top: $textsDistFromTop;
+            right: 10vw;
+        }
+
+        .record p {
+            font-weight: bold;
+            color: $recordTextColor;
+        }   
+    }
+}
